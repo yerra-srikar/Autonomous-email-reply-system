@@ -92,4 +92,4 @@
 
 ## Support
 
-For issues or questions, refer to the ESCALATION_FLOW.md and API_KEY_SETUP.md files.
+For issues or questions, refer to the ESCALATION_FLOW and API_KEY_SETUP files.
