@@ -1,0 +1,38 @@
+HOW TO ADD GEMINI API KEY IN PROJECT SETTINGS
+==============================================
+
+STEP 1: Open Project Settings
+------------------------------
+1. In your Apps Script editor (the code editor window)
+2. Look at the LEFT SIDEBAR
+3. Click the ⚙️ GEAR ICON labeled "Project Settings"
+
+STEP 2: Find "Script Properties" Section
+-----------------------------------------
+- Scroll down or look for a section called "Script Properties"
+- You should see a button that says "Add script property"
+
+STEP 3: Add the API Key
+-----------------------
+Click "Add script property" and fill in:
+
+Property (left field):  GEMINI_API_KEY
+Value (right field):    [PASTE YOUR API KEY HERE]
+
+To get your API key:
+1. Go to: https://aistudio.google.com/app/apikey
+2. Click "Create API Key" (or copy existing key)
+3. Copy the entire key string
+4. Paste it in the "Value" field above
+
+STEP 4: Click "Save"
+--------------------
+- Click the blue "Save" button
+- You're done!
+
+STEP 5: Verify It Works
+-----------------------
+1. Go back to the CODE tab in Apps Script
+2. Click the play ▶️ button next to any function (like processIncomingEmails)
+3. If it runs without an error about "GEMINI_API_KEY", you're set!
+-----------------------
