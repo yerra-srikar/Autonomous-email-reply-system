@@ -1,0 +1,94 @@
+HUMAN-REVIEW / ESCALATION FLOW
+===============================
+
+WHEN DOES A HUMAN GET PULLED IN?
+=================================
+
+1. FINANCIAL DECISIONS (Always escalate)
+   • Payment deducted but status shows pending (verify transaction ID)
+   • Refund requests (process refund, update participant)
+   • Invoice/receipt requests (issue official document)
+   • Past event certificates missing (verify attendance records)
+
+2. SAFETY & ACCESSIBILITY (Always escalate)
+   • Wheelchair/disability accommodation requests (coordinate logistics)
+   • Feedback mentioning safety issues, harassment, or financial discrepancies
+
+3. POLICY EXCEPTIONS (Always escalate)
+   • Deadline extension requests (only humans decide if emergency is valid)
+   • Monetary sponsorship >= ₹25,000 OR with MoU (Treasurer approval required)
+   • Alumni sponsorship requesting booth/naming rights (coordinate with CoSA)
+
+4. UNCLEAR/AMBIGUOUS CASES (Sometimes escalate)
+   • Mixed registration + sponsorship asks (split into two tracked items)
+   • Vague emails with unclear intent (human context-fills)
+   • Low AI confidence (< 70%) on any classification (human verifies)
+
+5. SYSTEM FAILURES (Always escalate)
+   • Gemini API returns null or errors (safety net—don't silently skip)
+
+---
+
+HOW DO HUMANS KNOW?
+===================
+
+1. GMAIL LABEL: "Needs-Review"
+   • Escalated email is tagged with this label
+   • Humans filter inbox by this label to see all pending decisions
+
+2. STARRED MESSAGE
+   • The specific message is starred for visibility
+
+3. STRUCTURED LOGGING
+   • Email logged to correct tab: Sponsorship_Log, Support_Log, Accessibility_Log, etc.
+   • Log shows: sender, subject, category, sub_category, confidence, reasoning
+   • Humans can review context from the log before responding
+
+4. ESCALATION TARGET SPECIFIED
+   • Policy sheet maps each issue type to owner:
+     - Payment issues → Finance Sub-committee Head
+     - Accessibility → Event Logistics + CoSA
+     - High-value sponsorship → Treasurer + Faculty Advisor
+     - Ambiguous → Relevant Club Lead
+   • Email is routed to correct person (via logging + label)
+
+---
+
+HUMAN WORKFLOW (What They Actually Do)
+======================================
+
+1. Open Gmail, filter by label: "Needs-Review"
+2. Click starred message, read it
+3. Open the relevant log sheet (Support_Log, Sponsorship_Log, etc.)
+4. Find the email entry — see AI's reasoning + confidence level
+5. Make decision (approve, deny, request more info, forward)
+6. Reply to sender OR take action (process refund, coordinate logistics, etc.)
+7. Update log entry with resolution (optional but good practice)
+
+---
+
+WHAT AI DOES NOT AUTO-REPLY TO
+===============================
+✗ Payment issues (no "your payment is processing" — humans verify first)
+✗ Refund requests (no "refund approved" — humans decide)
+✗ Financial/invoice requests (no estimates or promises)
+✗ Accessibility requests (no "we'll figure it out" — humans coordinate)
+✗ Deadline extensions (no "yes/no" — humans weigh emergencies)
+✗ Mixed asks (no partial answers — humans see both)
+✗ Low-confidence cases (no guesses — humans verify)
+✗ Complaints/sensitive feedback (no defensive responses — humans reply carefully)
+
+---
+
+THE PHILOSOPHY
+===============
+"When in doubt, escalate. Humans are better at edge cases, judgment calls, 
+and anything involving money/safety/ambiguity. AI handles the high-volume, 
+low-risk stuff (routine registration questions, spam filtering, 
+confirmation resends). Humans handle the rest."
+
+Result: Zero silent failures. Every escalated email has:
+• Full context (logged to tab)
+• Visual signal (Needs-Review label + star)
+• Clear owner (policy specifies who should handle it)
+• Complete audit trail (timestamp, reasoning, action taken)
